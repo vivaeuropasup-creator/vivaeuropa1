@@ -234,9 +234,15 @@ document.addEventListener('click', function(e) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(value).then(() => {
             const originalHTML = el.innerHTML;
-            el.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Скопировано!`;
+            el.style.background = 'linear-gradient(135deg, #2d5016 0%, #4a7c59 100%)';
+            el.style.borderColor = 'rgba(76, 175, 80, 0.6)';
+            el.style.boxShadow = '0 6px 25px rgba(76, 175, 80, 0.3)';
+            el.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path fill="#4CAF50" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Скопировано!`;
             setTimeout(() => { 
                 el.innerHTML = originalHTML;
+                el.style.background = '';
+                el.style.borderColor = '';
+                el.style.boxShadow = '';
             }, 1500);
         }).catch(err => {
             // Fallback for older browsers
@@ -248,8 +254,16 @@ document.addEventListener('click', function(e) {
             document.body.removeChild(textArea);
             
             const originalHTML = el.innerHTML;
-            el.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Скопировано!`;
-            setTimeout(() => { el.innerHTML = originalHTML; }, 1500);
+            el.style.background = 'linear-gradient(135deg, #2d5016 0%, #4a7c59 100%)';
+            el.style.borderColor = 'rgba(76, 175, 80, 0.6)';
+            el.style.boxShadow = '0 6px 25px rgba(76, 175, 80, 0.3)';
+            el.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path fill="#4CAF50" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Скопировано!`;
+            setTimeout(() => { 
+                el.innerHTML = originalHTML;
+                el.style.background = '';
+                el.style.borderColor = '';
+                el.style.boxShadow = '';
+            }, 1500);
         });
     }
 });
