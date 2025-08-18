@@ -1535,34 +1535,33 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
 /* Unified contact CTA (v3) */
 /* Force update Sun Aug 17 18:02:37 PDT 2025 */
 
-/* Email copyable span - EXACTLY like WhatsApp/Telegram buttons */
+/* Email copyable span - IDENTICAL to WhatsApp/Telegram style */
 .cta-email {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 50px;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 12px;
+  background: #dc3545;
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
   border: none;
   user-select: text;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   text-decoration: none;
   white-space: nowrap;
-  min-width: 200px;
-  height: 50px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .cta-email:hover {
-  background: linear-gradient(135deg, #e55a2b 0%, #e8851a 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  background: #bb2d3b;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .cta-email::before {
@@ -1572,9 +1571,10 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: left 0.6s ease;
   pointer-events: none;
+  z-index: 1;
 }
 
 .cta-email:hover::before {
@@ -1582,9 +1582,11 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
 }
 
 .cta-email .icon {
-  width: 20px; 
-  height: 20px;
+  width: 1.25rem; 
+  height: 1.25rem;
   color: #fff;
   flex-shrink: 0;
+  z-index: 2;
+  position: relative;
 }
 /* Force rebuild Sun Aug 17 18:24:03 PDT 2025 */
