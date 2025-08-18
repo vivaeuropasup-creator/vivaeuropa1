@@ -1539,12 +1539,14 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
 .cta-email {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 14px 28px;
+  border-radius: 50px;
   background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
   color: #fff;
   font-weight: 600;
+  font-size: 1rem;
   border: 1px solid rgba(212, 175, 55, 0.3);
   user-select: text;
   cursor: pointer;
@@ -1552,6 +1554,8 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .cta-email:hover {
@@ -1577,8 +1581,15 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
 }
 
 .cta-email .icon {
-  width: 18px; 
-  height: 18px;
+  width: 20px; 
+  height: 20px;
   color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+/* Make email button consistent with other CTA buttons */
+.cta-buttons .cta-email {
+  min-width: 200px;
+  height: 50px;
 }
 /* Force rebuild Sun Aug 17 18:24:03 PDT 2025 */
