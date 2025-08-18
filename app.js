@@ -224,6 +224,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 });
 
+// Email copy to clipboard functionality
+document.addEventListener('click', function(e) {
+    const el = e.target.closest('.cta-email');
+    if (!el) return;
+    
+    const value = el.getAttribute('data-copy') || 'vivaeuropa.sup@gmail.com';
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(() => {
+            const originalHTML = el.innerHTML;
+            el.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Скопировано!`;
+            setTimeout(() => { 
+                el.innerHTML = originalHTML;
+            }, 1500);
+        }).catch(err => {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = value;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            const originalHTML = el.innerHTML;
+            el.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Скопировано!`;
+            setTimeout(() => { el.innerHTML = originalHTML; }, 1500);
+        });
+    }
+});
+
 // Экспорт функций для использования в HTML
 window.VivaEuropa = {
     sendLead,
