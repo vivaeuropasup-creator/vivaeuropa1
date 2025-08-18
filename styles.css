@@ -1535,7 +1535,7 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
 /* Unified contact CTA (v3) */
 /* Force update Sun Aug 17 18:02:37 PDT 2025 */
 
-/* Email copyable span styles */
+/* Email copyable span - EXACTLY like WhatsApp/Telegram buttons */
 .cta-email {
   display: inline-flex;
   align-items: center;
@@ -1543,26 +1543,26 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
   gap: 8px;
   padding: 14px 28px;
   border-radius: 50px;
-  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: none;
   user-select: text;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
   text-decoration: none;
   white-space: nowrap;
+  min-width: 200px;
+  height: 50px;
 }
 
 .cta-email:hover {
-  background: linear-gradient(135deg, #242424 0%, #2e2e2e 100%);
-  border-color: rgba(212, 175, 55, 0.5);
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.2);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #e55a2b 0%, #e8851a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
 }
 
 .cta-email::before {
@@ -1572,8 +1572,9 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.6s ease;
+  pointer-events: none;
 }
 
 .cta-email:hover::before {
@@ -1583,13 +1584,7 @@ body[data-page="contact"]  .hero::before { background-image: url("bg_contact.web
 .cta-email .icon {
   width: 20px; 
   height: 20px;
-  color: var(--accent-gold);
+  color: #fff;
   flex-shrink: 0;
-}
-
-/* Make email button consistent with other CTA buttons */
-.cta-buttons .cta-email {
-  min-width: 200px;
-  height: 50px;
 }
 /* Force rebuild Sun Aug 17 18:24:03 PDT 2025 */
